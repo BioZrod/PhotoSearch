@@ -31,13 +31,14 @@ struct ContentView: View {
                 .tag(1)
                 .environmentObject(cardsViewModel)
         }
-        .onAppear {
-            let standardAppearance = UITabBarAppearance()
-            standardAppearance.backgroundColor = UIColor(Color.black)
-            standardAppearance.selectionIndicatorTintColor = UIColor(Color.white)
-            UITabBar.appearance().standardAppearance = standardAppearance
-            UITabBar.appearance().scrollEdgeAppearance = standardAppearance
-        }
+        /*.onAppear() {
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.backgroundColor = UIColor.black
+            tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.white]
+            tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.black]
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }*/
     }
 }
 

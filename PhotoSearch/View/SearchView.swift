@@ -27,6 +27,7 @@ struct SearchView: View {
                     } else {
                         self.cardsViewModel.getPhotos(searchQuery: self.cardsViewModel.searchTerm, page: currentPage) { success in
                             self.cardsViewModel.displayTrending = false
+                            self.cardsViewModel.tempSearchTerm = self.cardsViewModel.searchTerm
                             self.tabSelection = 0
                         }
                     }

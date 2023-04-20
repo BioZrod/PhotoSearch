@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7964026D29F1537600CEFCA5 /* APIKEY.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7964026C29F1537600CEFCA5 /* APIKEY.plist */; };
 		799F572329EC12D5000EFBB0 /* PhotoSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F572229EC12D5000EFBB0 /* PhotoSearchApp.swift */; };
 		799F572529EC12D5000EFBB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F572429EC12D5000EFBB0 /* ContentView.swift */; };
 		799F572729EC12D6000EFBB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 799F572629EC12D6000EFBB0 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7964026C29F1537600CEFCA5 /* APIKEY.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKEY.plist; sourceTree = "<group>"; };
 		799F571F29EC12D5000EFBB0 /* PhotoSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		799F572229EC12D5000EFBB0 /* PhotoSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchApp.swift; sourceTree = "<group>"; };
 		799F572429EC12D5000EFBB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		799F571629EC12D5000EFBB0 = {
 			isa = PBXGroup;
 			children = (
+				7964026C29F1537600CEFCA5 /* APIKEY.plist */,
 				799F572129EC12D5000EFBB0 /* PhotoSearch */,
 				799F573229EC12D7000EFBB0 /* PhotoSearchTests */,
 				799F573C29EC12D7000EFBB0 /* PhotoSearchUITests */,
@@ -305,6 +308,7 @@
 			files = (
 				799F572A29EC12D6000EFBB0 /* Preview Assets.xcassets in Resources */,
 				799F572729EC12D6000EFBB0 /* Assets.xcassets in Resources */,
+				7964026D29F1537600CEFCA5 /* APIKEY.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,21 @@ import Alamofire
 
 class BackendAPI {
     
-    let flickrAPIKey = "e5adcc4e479768a4d831a844cf574688"
+    private var flickrAPIKey: String {
+        get {
+            guard let fileURL = Bundle.main.url(forResource: "APIKEY", withExtension: "plist"),
+                  let plist = NSDictionary(contentsOf: fileURL),
+                  let value = plist.object(forKey: "FLICKR_API_KEY") as? String else {
+                fatalError("Couldn't load API key from 'APIKEY.plist'.")
+            }
+            
+            if value.starts(with: "_") {
+                fatalError("Register for a Flickr API KEY at https://www.flickr.com/services/apps/create/apply/")
+            }
+            
+            return value
+        }
+    }
     
     func getPopularFlickrPhotos(page : Int, completion: @escaping (Result<[FlickrPhoto], Error>) -> Void) {
 

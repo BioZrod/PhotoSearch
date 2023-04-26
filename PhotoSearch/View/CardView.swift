@@ -15,58 +15,62 @@ struct CardView: View {
     var thumbnail : URL
     
     var body: some View {
-        AsyncImage(url: thumbnail) { image in
-            
-            ZStack {
-                image
-                    .resizable()
-                    .overlay(
-                        Rectangle()
-                            .stroke(Color.gray, lineWidth: 1.5)
-                    )
-                    /*.overlay(
-                        VStack {
-                            Spacer()
-                            
-                            Rectangle()
-                                 .fill(Color.black)
-                                 .frame(width: 620, height: 25)
-                                 .blur(radius: 2)
-                                 .offset(x: 0, y: 10)
-                        }
-                    )*/
+        
+        NavigationLink(destination: PhotoView(imageURL: thumbnail), label: {
+
+            AsyncImage(url: thumbnail) { image in
                 
-                VStack(alignment: .leading) {
-                    Spacer()
+                ZStack {
+                    image
+                        .resizable()
+                        .overlay(
+                            Rectangle()
+                                .stroke(Color.gray, lineWidth: 1.5)
+                        )
+                        /*.overlay(
+                            VStack {
+                                Spacer()
+                                
+                                Rectangle()
+                                     .fill(Color.black)
+                                     .frame(width: 620, height: 25)
+                                     .blur(radius: 2)
+                                     .offset(x: 0, y: 10)
+                            }
+                        )*/
                     
-                    HStack {
-                        Text(title)
-                            .font(.body)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
-                            
+                    VStack(alignment: .leading) {
                         Spacer()
-                    }
-                    .padding(.bottom, 1)
-                   
-                    HStack {
-                        Text("\(author) / \(publishDate)")
-                            .font(.body)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
                         
-                        Spacer()
+                        HStack {
+                            Text(title)
+                                .font(.body)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                                
+                            Spacer()
+                        }
+                        .padding(.bottom, 1)
+                       
+                        HStack {
+                            Text("\(author) / \(publishDate)")
+                                .font(.body)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                            
+                            Spacer()
+                        }
+                        .padding(.bottom, 10)
                     }
-                    .padding(.bottom, 10)
+                    .padding(.horizontal, 10)
                 }
-                .padding(.horizontal, 10)
+                
+            } placeholder: {
+                Image("placeholder")
+                    .resizable()
             }
-            
-        } placeholder: {
-            Image("placeholder")
-                .resizable()
-        }
-        .frame(width: 600, height: 300)
+            .frame(width: 600, height: 300)
+        })
     }
 }
 

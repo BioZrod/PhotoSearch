@@ -15,12 +15,12 @@ struct FeedView: View {
     @Binding var currentPage: Int
 
     var body: some View {
-        
+
         VStack(alignment: .leading) {
-     
+            
             Text(self.cardsViewModel.feedTitle())
                 .font(.title3)
-
+            
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: gridItemLayout) {
                     ForEach(self.cardsViewModel.photos, id: \.id) { photo in
@@ -30,7 +30,7 @@ struct FeedView: View {
                                 .focused($isPhotoSelected, equals: photo.id)
                                 .background(isPhotoSelected == photo.id ? Color.blue.opacity(0.5) : Color.clear)
                                 .border(isPhotoSelected == photo.id ? Color.white : Color.clear, width: 4)
-                                .id(photo.id)
+                                .id(photo.id)  
                         }
                     }
                 }
@@ -57,7 +57,7 @@ struct FeedView: View {
                 }
             }
             .onAppear {
-
+                
                 if(self.cardsViewModel.displayTrending) {
                     self.cardsViewModel.clearPhotos()
                     //self.cardsViewModel.getPopularPhotos(page: self.currentPage)
@@ -73,6 +73,7 @@ struct FeedView: View {
         }
         .background(.black)
     }
+    
 }
 
 struct FeedView_Previews: PreviewProvider {

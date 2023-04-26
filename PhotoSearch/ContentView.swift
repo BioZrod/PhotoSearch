@@ -15,30 +15,32 @@ struct ContentView: View {
     
     var body: some View {
         
-        TabView(selection: $tabSelection) {
-            
-            FeedView(currentPage: $currentPage)
-                .tabItem {
-                    Text("Feed")
-                }
-                .tag(0)
-                .environmentObject(cardsViewModel)
-            
-            SearchView(tabSelection: $tabSelection, currentPage: $currentPage)
-                .tabItem {
-                    Text("Search")
-                }
-                .tag(1)
-                .environmentObject(cardsViewModel)
+        NavigationView {
+            TabView(selection: $tabSelection) {
+                
+                FeedView(currentPage: $currentPage)
+                    .tabItem {
+                        Text("Feed")
+                    }
+                    .tag(0)
+                    .environmentObject(cardsViewModel)
+                
+                SearchView(tabSelection: $tabSelection, currentPage: $currentPage)
+                    .tabItem {
+                        Text("Search")
+                    }
+                    .tag(1)
+                    .environmentObject(cardsViewModel)
+            }
+            /*.onAppear() {
+             let tabBarAppearance = UITabBarAppearance()
+             tabBarAppearance.backgroundColor = UIColor.black
+             tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.white]
+             tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.black]
+             UITabBar.appearance().standardAppearance = tabBarAppearance
+             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+             }*/
         }
-        /*.onAppear() {
-            let tabBarAppearance = UITabBarAppearance()
-            tabBarAppearance.backgroundColor = UIColor.black
-            tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.white]
-            tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.black]
-            UITabBar.appearance().standardAppearance = tabBarAppearance
-            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-        }*/
     }
 }
 
